@@ -71,17 +71,15 @@
     }
 </style>
 
-
-
 <header class="header">
     <div class="header_logo">
         <h3 id="logo">Your<span>App</span></h3>
     </div>
     <div class="header_notification">
-        <HeaderIcon icon="bell"/>
+        <HeaderIcon/>
     </div>
     <div class="header_profile">
-        <img src="images/member-4.jpg" alt="avatar" />
+        <img src="images/John.jpg" alt="avatar" />
         <div class="info">
             <h5>John Smith</h5>
             <h6>Tech Lead</h6>

@@ -1,6 +1,3 @@
-import { global } from "../stores/globalStore";
-
-
 export let data = [
     { id: 0, icon: "chart-line", page: "Home" },
     { id: 1, icon: "comments", page: "Coming Soon" },

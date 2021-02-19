@@ -2,8 +2,6 @@
       // PROPS //
     export let page;
     import { global } from "../stores/globalStore.js";
-
-    import { loggedIn } from "../constants/sidebar.js";
 </script>
 
 
@@ -71,6 +69,6 @@
 
 <div
 on:click={() => ($global.currentPage = page)} data-tooltip={page}}>
-    <i class="fas fa-{$global.loggedIn ? "logout" : "login"}"
+    <i class="fas fa-logout"
         class:sideActive={$global.currentPage === page}/>
 </div>

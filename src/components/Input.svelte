@@ -6,5 +6,5 @@
 {#if (type = "input")}
     <input type="text" />
 {:else}
-    <textarea name="" id="" cols="30" rows="10" />
+    <textarea cols="30" rows="10" />
 {/if}

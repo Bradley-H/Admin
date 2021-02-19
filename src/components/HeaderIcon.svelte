@@ -1,18 +1,16 @@
 <script>
     // IMPORTS //
-    import Notification from './Notification.svelte'
+    import Notification from "./Notification.svelte";
     // STORES //
-    import { global } from "../stores/globalStore";
-    // CONSTANTS //
-    const note = [
-        {id: 0, text: "Meeting at 5", image: "/images/member-1.jpg", important: true, },
-        {id: 1, text: "Meeting Reschduled to 5:20", image: "/images/member-1.jpg", important: true, }
-    ]
-</script>
- 
+    import { global, note } from "../stores/globalStore";
+
+    function RemoveID(e, id) { 
+		return note.update(arr => arr.filter(item => item.id !== e.detail))
+	}
+</script> 
 
 <style>
-    div{
+    div {
         font-size: 1.5rem;
     }
     .active::after {
@@ -25,25 +23,22 @@
         bottom: 2.1rem;
     }
 
-    .notification-list{
-       display: flex;
-       flex-direction: column;
+    .notification-list {
+        display: flex;
+        flex-direction: column;
     }
 </style>
 
 <div>
-    <i on:click={() => (
-        $global.headerActive = false,
-        $global.notificationActive = !$global.notificationActive,
-        $global.loggedIn = false)}
+    <i
+        on:click={() => (
+            ($global.headerActive = false),
+            ($global.notificationActive = !$global.notificationActive))}
         class:active={$global.headerActive}
         class="fas fa-bell"/>
-        <div class="notification-list">
-            {#each note as notifications (notifications.id)}
-            <div>
-                <Notification {...notifications}/>
-            </div>
-            {/each}
-        </div>
-        
+    <div class="notification-list">
+        {#each $note as notifications (notifications.id)}
+                <Notification on:Remove={RemoveID} {...notifications} />
+        {/each}
+    </div>
 </div>

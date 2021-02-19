@@ -68,7 +68,7 @@
 
     @media (min-width: 768px){
         canvas{
-            width: 98% !important;;
+            width: 90% !important;;
         }
     }
 </style>

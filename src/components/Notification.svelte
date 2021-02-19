@@ -3,8 +3,14 @@
     export let text;
     export let important;
     export let image;
+    export let id;
     // STORES //
     import { global } from "../stores/globalStore";
+    // SVELTE IMPORTS //
+    import {createEventDispatcher} from 'svelte'
+    import { slide, fade } from "svelte/transition"
+    import {flip} from 'svelte/animate'
+    const dispatch = createEventDispatcher();
 </script>
 
 <style>
@@ -66,7 +72,9 @@
 </style>
 
 
-<div class="notification" class:active={$global.notificationActive}>
+<div on:click={() => dispatch('Remove', id)} class="notification" class:active={$global.notificationActive}
+     out:slide={{x: 500}}
+>
     <div class="img-container">
         <img src={image} alt="avatar" />
     </div>
@@ -74,7 +82,6 @@
         <span>New Message</span>
         <h5>{text}</h5>
     </div>
-
     {#if important}
         <div class="important" />
     {/if}

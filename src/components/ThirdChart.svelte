@@ -61,7 +61,6 @@
 
     @media (min-width: 768px){
         canvas{
-            width: 87% !important;
 			height: 170px !important;
         }
     }
