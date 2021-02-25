@@ -62,6 +62,14 @@
     @media (min-width: 768px){
         canvas{
 			height: 170px !important;
+            width: 90% !important;
+        }
+    }
+
+    @media (min-width: 2000px){
+        canvas{
+            height: 220px !important;
+            width: 600px !important;
         }
     }
 </style>

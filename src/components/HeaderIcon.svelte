@@ -2,7 +2,9 @@
     // IMPORTS //
     import Notification from "./Notification.svelte";
     // STORES //
-    import { global, note } from "../stores/globalStore";
+    import { global } from "../stores/globalStore";
+    // CONSTANTS //
+    import {note} from '../constants/notifications.js'
 
     function RemoveID(e, id) { 
 		return note.update(arr => arr.filter(item => item.id !== e.detail))

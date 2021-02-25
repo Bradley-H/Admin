@@ -4,13 +4,15 @@
 	import PrimaryChart from "./components/PrimaryChart.svelte";
 	import SocialCard from "./components/SocialCard.svelte";
 	import ThirdChart from "./components/ThirdChart.svelte";
-	import Sidebar from "./components/Sidebar.svelte";
+	import Activity from "./components/Activity.svelte";
 	import Settings from "./components/Settings.svelte";
-	import Members from "./components/Members.svelte";
 	import Messages from "./components/Messages.svelte";
+	import Sidebar from "./components/Sidebar.svelte";
+	import Members from "./components/Members.svelte";
 	import Header from "./components/Header.svelte";
 	import Alert from "./components/Alert.svelte";
-	import Activity from "./components/Activity.svelte";
+	import Login from "./components/Login.svelte";
+	import Msg from "./components/Msg.svelte";
 	// SVELTE IMPORTS //
 	import { fly } from "svelte/transition";
 	// STORES //
@@ -20,13 +22,16 @@
 	import { users } from "./constants/users.js";
 	import { activities } from "./constants/activities.js";
 	// REACTIVE VALUES //
-	$: testing = console.log();
 </script>
 
 <style>
-	main {
-		margin-top: 3rem;
-		padding-bottom: 3.5rem;
+	.login {
+		position: absolute;
+		height: 100vh;
+		width: 100vw;
+		background-image: url("/images/background.jpeg");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
 	}
 
 	.social {
@@ -35,7 +40,6 @@
 		margin-top: 2rem;
 		padding: 0 0.8rem;
 	}
-
 
 	.social-cards {
 		display: flex;
@@ -47,10 +51,10 @@
 		margin: 0.5rem 0;
 	}
 
-	h5{
-			text-align: center;
-			margin: .5rem 0;
-		}
+	h5 {
+		text-align: center;
+		margin: 0.5rem 0;
+	}
 
 	.second,
 	.third {
@@ -72,25 +76,25 @@
 		width: 90%;
 	}
 
-	.bottom{
-			display: flex;
-			margin: 1rem 1.1rem;
-		}
+	.bottom {
+		display: flex;
+		margin: 1rem 1.1rem;
+	}
 
-	.row{
-			display: flex;
-			flex-direction: column;
-		}
+	.row {
+		display: flex;
+		flex-direction: column;
+	}
 
-		.grid{
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			margin: 0 1rem;
-		}
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin: 0 1rem;
+	}
 
-		.bottom .row{
-			width: 49%;
-		}
+	.bottom .row {
+		width: 49%;
+	}
 	@media (min-width: 768px) {
 		main {
 			margin-top: 3rem;
@@ -98,6 +102,11 @@
 		}
 		.alerts {
 			margin-top: 0.25rem;
+		}
+
+		.login {
+		margin-top: -3rem;
+		margin-left: -5rem;
 		}
 		.secondary {
 			flex-direction: row;
@@ -107,15 +116,13 @@
 			margin: 0.8rem auto;
 		}
 
-		.grid{
+		.grid {
 			grid-template-columns: repeat(4, 1fr);
-			margin-left: .2rem;
+			margin-left: 0.2rem;
 		}
-
-
-	
 	}
 </style>
+
 
 
 {#if $global.currentPage !== "Logout"}
@@ -164,21 +171,20 @@
 			<h5>Newest Members</h5>
 			<div class="grid">
 				{#each users as user}
-				<Members {...user} />
-			{/each}
+					<Members {...user} />
+				{/each}
 			</div>
 		</div>
-
 
 		<div class="row">
 			<h5>Recent Activities</h5>
 			<div class="grid">
-			{#each activities as act (act.id)}
-				<Activity {...act} />
-			{/each}
+				{#each activities as act (act.id)}
+					<Activity {...act} />
+				{/each}
 			</div>
-			</div>
-	
+		</div>
+
 		<!-- QUICK MESSAGE -->
 		<div class="bottom">
 			<div class="row">
@@ -190,11 +196,10 @@
 				<Settings />
 			</div>
 		</div>
-
+		<Msg/>
 	{:else if $global.currentPage === "Logout"}
-		<h3>Hello</h3>
+		<div class="login">
+			<Login/>
+		</div>
 	{/if}
-
-	
 </main>
-

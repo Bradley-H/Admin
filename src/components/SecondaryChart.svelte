@@ -62,13 +62,19 @@
 </script>
 
 <style>
-    #secondaryChart1{
-        height: 166px !important;
+
+    @media (max-width: 1999px){
+        canvas{
+			height: 170px !important;
+            width: 90% !important;
+        }
     }
 
-    @media (min-width: 768px){
+
+    @media (min-width: 2000px){
         canvas{
-            width: 90% !important;;
+            height: 200px !important;
+            width: 850px !important;
         }
     }
 </style>

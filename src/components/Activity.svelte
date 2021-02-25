@@ -49,7 +49,7 @@
 
     .card_info h5 {
         font-size: 0.75rem;
-        margin-top: 0.5rem;
+        margin: 0.5rem;
     }
 
     .card_arrow {
@@ -69,7 +69,7 @@
     a{
         margin-top: .5rem;
         position: absolute;
-        transform: translate(-8vh, -20vw) rotate(-90deg)
+        transform: translate(-65px, -20vw) rotate(-90deg)
     }
 
     @media (min-width: 768px){
@@ -80,7 +80,11 @@
         }
 
         a{
-            transform: translate(-10vh, -9vw) rotate(-90deg)
+            transform: translate(-80px, -9vw) rotate(-90deg)
+        }
+
+        h5{
+            margin-bottom: 10px;
         }
     }
 </style>

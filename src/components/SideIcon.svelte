@@ -3,7 +3,7 @@
     export let icon;
     export let page;
     // STORES //
-    import { global } from "../stores/globalStore";
+    import { global } from "../stores/globalStore"; 
 </script>
 
 <style>

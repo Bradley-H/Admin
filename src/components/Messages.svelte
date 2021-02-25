@@ -1,4 +1,50 @@
-<script></script>
+<script>
+    import { global } from "../stores/globalStore.js";
+
+    let input = "";
+    let para;
+    let area = "";
+
+    $: testing = console.log(input.length, area.length);
+
+    function message() {
+        $global.messageSent = true;
+        setTimeout(() => ($global.messageSent = false), 1500);
+    }
+
+    async function searchUser() {
+        let res = await fetch("https://jsonplaceholder.typicode.com/users");
+        let users = await res.json();
+        let matches = users.filter((user) => {
+            const regex = new RegExp("^" + input, "gi");
+            return user.name.match(regex);
+        });
+        if (input.length === 0) {
+            matches = [];
+        }
+        console.log(matches);
+        if (res.ok) {
+            return matches;
+        } else {
+            throw new Error(data);
+        }
+    }
+
+    function fill() {
+        para = document.querySelectorAll(".user");
+        let test = Array.from(para);
+        input = test[0].textContent;
+        para.forEach((p) => {
+            p.style.visibility = "hidden";
+        });
+    }
+
+    function submit() {
+        input = "";
+        area = "";
+    }
+</script>
+
 
 <style>
     div {
@@ -21,19 +67,19 @@
     input {
         border: 1px solid #bebebe;
         width: 80%;
-        height: 1.3rem;
+        height: 1.7rem;
         margin: 0.6rem;
-        border-radius: 5px;
+        border-radius: 3px;
     }
 
     textarea {
         width: 88%;
         margin-bottom: 0.7rem;
-        height: 13vh
+        height: 13vh;
     }
 
-    button{
-        background-color: #7377BF;
+    button {
+        background-color: #7377bf;
         color: white;
         width: 80%;
         border-radius: 5px;
@@ -41,27 +87,59 @@
         outline: none;
         border: none;
     }
-    @media (min-width: 768px){
-div{
-    height: 42vh;
-}
+    @media (min-width: 768px) {
+        div {
+            height: 250px;
+        }
 
-textarea{
-    height: 19vh;
-}
+        textarea {
+            height: 110px;
+        }
 
-button{
-    margin-bottom: .5rem;
-}
+        button {
+            margin-bottom: 0.5rem;
+        }
+
+        .disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        .user {
+            border: 1px solid grey;
+            font-size: 13px;
+            padding: 0.2rem 0.75rem;
+        }
+
+        .user:hover {
+            background-color: lightgray;
+        }
     }
 </style>
 
+
 <div>
-    <form on:submit|preventDefault>
-        <input type="text" placeholder="Search for User" />
-        <textarea cols="20" rows="20" />
-        <button>Send Message</button>
+    <form on:submit|preventDefault={submit}>
+        <input type="text" placeholder="Search for User" bind:value={input} />
+        {#await searchUser(input)}
+            <div />
+        {:then users}
+            {#each users as user}
+                <p on:click={fill} class="user">{user.name}</p>
+            {/each}
+        {:catch error}
+            <p>Error: {error}</p>
+        {/await}
+        <textarea
+            bind:value={area}
+            placeholder="Message to user"
+            cols="13"
+            rows="20"
+        />
+        <button
+            class:disabled={input.length <= 7 && area.length <= 15}
+            disabled={input.length <= 7 && area.length <= 15}
+            on:click={message}>Send Message</button
+        >
     </form>
 </div>
-
-

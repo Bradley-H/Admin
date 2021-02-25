@@ -56,7 +56,6 @@
     }
 
     .member_info h5 {
-        /* display: none; */
         font-size: .58rem;
         margin: .3rem 0;
     }
@@ -71,7 +70,7 @@
         border-radius: 50%;
     }
 
-    @media (min-width:768px) {
+    @media (min-width:900px) {
         .main_members{
             width: 93%;
             height: 140px;
@@ -86,7 +85,7 @@
             height: 100%;
         }
         .member_icon{
-            margin-right: 1.5rem;
+            margin-right: .5rem;
         }
 
         .member_info{
