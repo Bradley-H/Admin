@@ -21,6 +21,11 @@
         width: 160px;
     }
 
+    h4,
+    h5{
+        font-family: var(--primaryFont);
+    }
+
     a{
         text-decoration: none;
         font-size: .68rem;
@@ -58,6 +63,7 @@
     .member_info h5 {
         font-size: .58rem;
         margin: .3rem 0;
+        width: 110%;
     }
 
    .member_date {
@@ -89,7 +95,8 @@
         }
 
         .member_info{
-            height: 62%;
+            height: 65%;
+            width: 100%;
         }
     }
 </style>

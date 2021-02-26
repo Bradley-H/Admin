@@ -25,8 +25,8 @@
       height: 250px;
       position: relative;
       flex-direction: column;
-      top: 30%;
-      right: 1%;
+      font-family: var(--primaryFont);
+      transform: translate(0%, 50%);
   }
 
   [disabled]{
@@ -38,17 +38,16 @@
   .banner{
       position: relative;
       width: 310px;
-      height: 25px;
+      height: 35px;
       background-color: #8184C4;
-      top: 5%;
-      left: 0px;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
   }
 
   p{
       position: absolute;
-      top: 24.5%;
+      top: 18%;
+      left: 47%;
       color: white;
       z-index: 2;
   }
@@ -59,8 +58,9 @@
       width: 310px;
       padding: .5rem 2rem;
       background-color: white;
-      height: 55%;
+      height:62%;
       border-radius: .5rem;
+      position: relative;
   }
   input{
       margin-bottom:.5rem;
@@ -79,8 +79,12 @@
         background-color: #8184C4;
         border: none;
         color: white;
-        padding: .5rem;
+        padding: .55rem;
 		}
+
+        p, button{
+            font-family: var(--primaryFont);
+        }
 </style>
 
 <div in:fly={{delay: 500, x:70}}>

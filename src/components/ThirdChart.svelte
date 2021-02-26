@@ -17,7 +17,8 @@
                     },
                 ],
             },
-            options: {
+            options: { 
+                devicePixelRatio: 1,
                 title: {
                     display: true,
                     text: "Mobile Traffic",
@@ -54,25 +55,5 @@
     afterUpdate(() => setTimeout(createthird, 1000));
 </script>
 
-<style>
-       canvas{
-        height: 150px !important;
-    }
 
-    @media (min-width: 768px){
-        canvas{
-			height: 170px !important;
-            width: 90% !important;
-        }
-    }
-
-    @media (min-width: 2000px){
-        canvas{
-            height: 220px !important;
-            width: 600px !important;
-        }
-    }
-</style>
-
-
-<canvas id="thirdChart" />
+<canvas id="thirdChart" width="3" height="1" />

@@ -14,6 +14,7 @@
         padding: 1rem;
         flex-direction: column;
         width: 33.33333%;
+        font-family: var(--primaryFont);
     }
 
     h3 {

@@ -14,7 +14,7 @@
 	import Login from "./components/Login.svelte";
 	import Msg from "./components/Msg.svelte";
 	// SVELTE IMPORTS //
-	import { fly } from "svelte/transition";
+	import { fly} from "svelte/transition";
 	// STORES //
 	import { global } from "./stores/globalStore.js";
 	// CONSTANTS //
@@ -27,8 +27,8 @@
 <style>
 	.login {
 		position: absolute;
-		height: 100vh;
-		width: 100vw;
+		min-height: 100%;
+		min-width: 100%;
 		background-image: url("/images/background.jpeg");
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
@@ -46,14 +46,11 @@
 		margin-bottom: 4rem;
 	}
 
-	h3 {
-		text-align: center;
-		margin: 0.5rem 0;
-	}
-
+	h3,
 	h5 {
 		text-align: center;
 		margin: 0.5rem 0;
+		font-family: var(--primaryFont);
 	}
 
 	.second,
@@ -110,7 +107,7 @@
 		}
 		.secondary {
 			flex-direction: row;
-			margin: 0 1.5rem;
+			margin: 0 2rem;
 		}
 		.primaryChart {
 			margin: 0.8rem auto;

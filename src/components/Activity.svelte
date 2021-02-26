@@ -40,6 +40,7 @@
     h4, 
     h5{
         font-weight: normal;
+        font-family: var(--primaryFont);
     }
 
     .card_info h4 {

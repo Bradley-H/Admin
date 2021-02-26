@@ -66,14 +66,23 @@
 
     input {
         border: 1px solid #bebebe;
-        width: 80%;
         height: 1.7rem;
         margin: 0.6rem;
         border-radius: 3px;
     }
 
+    button,
+    input,
+    textarea{
+        width: 80%;
+    }
+
+    input,
+    textarea{
+        padding:.75rem;
+    }
+
     textarea {
-        width: 88%;
         margin-bottom: 0.7rem;
         height: 13vh;
     }
@@ -81,11 +90,11 @@
     button {
         background-color: #7377bf;
         color: white;
-        width: 80%;
         border-radius: 5px;
         height: 2rem;
         outline: none;
         border: none;
+        font-family: var(--primaryFont);
     }
     @media (min-width: 768px) {
         div {
@@ -109,6 +118,10 @@
             border: 1px solid grey;
             font-size: 13px;
             padding: 0.2rem 0.75rem;
+        }
+        .user,
+        button{
+            font-family: var(--primaryFont);
         }
 
         .user:hover {

@@ -3,7 +3,6 @@
     import HeaderIcon from "./HeaderIcon.svelte";
 </script>
 
-
 <style>
     header {
         display: flex;
@@ -61,22 +60,25 @@
         color: white;
         font-size: 11px;
     }
-    h6{
-        color: #FF5722;
+    h6 {
+        color: white;
         text-shadow: 0 0 2px black;
     }
 
-    .info{
+    .info {
         text-align: center;
+        font-family: var(--primaryFont);
     }
 </style>
+
+
 
 <header class="header">
     <div class="header_logo">
         <h3 id="logo">Your<span>App</span></h3>
     </div>
     <div class="header_notification">
-        <HeaderIcon/>
+        <HeaderIcon />
     </div>
     <div class="header_profile">
         <img src="images/John.jpg" alt="avatar" />

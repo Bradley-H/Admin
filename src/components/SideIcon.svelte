@@ -19,6 +19,7 @@
     div:hover::before{
         opacity: .8;
         transform: scale(.86);
+        font-family: var(--primaryFont);
     }
 
     .disabled{

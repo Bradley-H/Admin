@@ -35,6 +35,7 @@
                 ],
             },
             options: {
+                devicePixelRatio: 1,
                 title: {
                     display: true,
                     text: "Daily Traffic",
@@ -62,21 +63,6 @@
 </script>
 
 <style>
-
-    @media (max-width: 1999px){
-        canvas{
-			height: 170px !important;
-            width: 90% !important;
-        }
-    }
-
-
-    @media (min-width: 2000px){
-        canvas{
-            height: 200px !important;
-            width: 850px !important;
-        }
-    }
 </style>
 
-<canvas id="secondaryChart1" />
+<canvas id="secondaryChart1" width="3" height="1" />

@@ -11,6 +11,7 @@
 
     p{
         min-width: 210px;
+        font-size: .75rem;
     }
     .switch {
         position: relative;
@@ -34,13 +35,11 @@
         border: 1px solid #bebebe;
         top: -0px;
         left: 1px;
-        -webkit-transition: all 500ms ease-in-out;
-        transition: all 500ms ease-in-out;
+        transition: all 350ms ease-in-out;
     }
 
     .switch::before {
-        -webkit-transition: all 500ms ease-in-out;
-        transition: all 500ms ease-in-out;
+        transition: all 350ms ease-in-out;
         position: absolute;
         top: 2px;
         left: 3px;

@@ -8,8 +8,7 @@
     import { global } from "../stores/globalStore";
     // SVELTE IMPORTS //
     import {createEventDispatcher} from 'svelte'
-    import { slide, fade } from "svelte/transition"
-    import {flip} from 'svelte/animate'
+    import { slide} from "svelte/transition"
     const dispatch = createEventDispatcher();
 </script>
 
@@ -27,6 +26,7 @@
         border-radius: 7px;
         margin-top: 2px;
         padding-top: 5px;
+        font-family: var(--primaryFont);
     }
 
     .notification:hover {

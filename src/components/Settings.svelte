@@ -12,6 +12,7 @@
         padding: 1rem;
         width: 100%;
         height: 30vh;
+        font-family: var(--primaryFont);
     }
 
     button{
@@ -28,6 +29,7 @@
         cursor: pointer;
     }
 
+
     @media (min-width: 768px){
         .settings{
             height: 250px;
@@ -35,7 +37,8 @@
 
         button{
             position: relative;
-            top: 2rem;
+            top: 1.7rem;
+            
         }
     }
 </style>

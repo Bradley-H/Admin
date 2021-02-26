@@ -21,11 +21,13 @@
                 ],
             },
             options: {
+                devicePixelRatio: 1,
                 title: {
                     display: true,
                     text: "Traffic",
                     fontSize: 18,
                 },
+                devicePixelRatio: 1,
                 legend: {
                     display: false,
                 },
@@ -37,7 +39,6 @@
                     },
                 ],
                 responsive: true,
-                aspectRatio: 3,
             },
         });
     }
@@ -45,13 +46,7 @@
 </script>
 
 <style>
-    @media (min-width: 768px){
-        canvas{
-            width: 90% !important;
-			height: 215px !important;
-        }
-    }
 </style>
 
 
-<canvas id="primaryChart" />
+<canvas id="primaryChart" width="5" height="1" />

@@ -14,6 +14,7 @@
 <style>
     div {
         font-size: 1.5rem;
+        font-family: var(--primaryFont);    
     }
     .active::after {
         position: absolute;

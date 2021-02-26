@@ -10,6 +10,7 @@
         justify-content: center;
         align-items: center;
         font-size: 12px;
+        font-family: var(--primaryFont);
     }
 
     h3 {
@@ -34,9 +35,6 @@
         right: 9px;
         top: 30%;
     }
-    .inactive {
-        display: none;
-    }
 
     span {
         font-weight: normal;
@@ -52,11 +50,9 @@
 
 
 <div class:inactive={!active}>
-    <h3>
-        Alert:<span>
+    <h3>Alert:<span>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Odio,architecto.</span
-        >
+            Odio,architecto.</span>
         <i class="fas fa-times" on:click={() => (active = !active)} />
     </h3>
 </div>
